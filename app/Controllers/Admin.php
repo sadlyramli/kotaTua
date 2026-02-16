@@ -640,7 +640,7 @@ class Admin extends BaseController
 
                 // Berhasil menyimpan aset
                 session()->setFlashdata('pesan', 'Data Berhasil Ditambah');
-                return redirect()->to(base_url('admin/import'));
+                return redirect()->to(base_url('admin/data'));
             } else {
                 return redirect()->to(base_url('admin/import'));
             }
@@ -648,5 +648,26 @@ class Admin extends BaseController
             session()->setFlashdata('errors', \config\Services::validation()->getErrors());
             return redirect()->to(base_url('admin/import'));
         }
+    }
+
+    public function data()
+    {
+        $data = array(
+            'title' => 'Data',
+            'polygon' => $this->m_admin->get_polygon()->getResult(),
+            // 'isi' => 'admin/v_cabor',
+        );
+
+        return view('admin/v_data', $data);
+    }
+
+    public function import()
+    {
+        $data = array(
+            'title' => 'Tambah Data',
+            'polygon' => $this->m_admin->get_polygon()->getResult(),
+        );
+
+        return view('admin/v_tambah_data', $data);
     }
 }

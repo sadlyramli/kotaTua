@@ -11,8 +11,8 @@
 
     <title><?= $titlehead ?></title>
 
-    <link rel="shortcut icon" href="<?= base_url(); ?>/img/logo_kemenbud.png" type="image/x-icon">
-    <link rel="shortcut icon" href="<?= base_url(); ?>/img/logo_kemenbud.png" type="image/png">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/img/logo.png" type="image/png">
 
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/fonts/boxicons.css" />
@@ -46,7 +46,7 @@
 
             <div class="col-xl-5 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 120px;">
+                <div class="card o-hidden border-0 shadow-lg" style="margin-top: 120px;background-color: #2c2c2c;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -54,7 +54,7 @@
                             <div class="col-lg-12">
                                 <div class="p-4">
                                     <div style="display: flex;justify-content:center;align-items:center">
-                                        <img style="height: 15%; width:45%;margin-bottom: 7px;" class="img-profile" src="<?= base_url(); ?>/img/sig_bpk.png">
+                                        <img style="height: 15%; width:35%;margin-bottom: 7px;" class="img-profile" src="<?= base_url(); ?>/img/logo.png">
                                     </div>
                                     <div class="text-center mb-3 mt-2">
                                         <h2 class="h5 text-gray-900 mb-1" style="font-size: 25px;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><strong>LOGIN ADMIN</i></strong></h2>
@@ -94,7 +94,7 @@
                                     <br>
                                     <hr>
                                     <div class="copyright text-center small" style="padding-bottom: -1px;">
-                                        <strong>&copy; <?php echo date('Y') ?> Balai Pelestarian Kebudayaan Wilayah XVIII</a>.</strong>
+                                        <strong>&copy; <?php echo date('Y') ?> Kota Tua Majene</a>.</strong>
                                     </div>
                                     <?php
                                     $errors = session()->getFlashdata('errors');

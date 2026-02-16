@@ -6,7 +6,7 @@
 
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="py-3 breadcrumb-wrapper mb-4">
-            <span class="text-muted fw-light">Tambah Situs</span>
+            <span class="text-muted fw-light">Tambah Data</span>
         </h4>
         <div class="card mb-4">
             <form class="card-body" method="post" action="<?= base_url('admin/insert'); ?>" enctype="multipart/form-data">
@@ -15,7 +15,7 @@
                     
                     <!-- nilai_penting -->
                     <div class="col-md-3" style="justify-content: left; align-items: center; display: flex;">
-                        <label class="form-label">Nama</label>
+                        <label class="form-label">Nama File</label>
                     </div>
                     <div class="col-md-9">
                         <textarea name="nama" class="form-control" placeholder="Masukkan Nama"></textarea>

@@ -14,12 +14,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-  <title>Webgis BPK XVIII</title>
+  <title>Kota Tua Majene</title>
 
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/img/logo_kemenbud.png" />
+  <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/img/logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,7 +72,7 @@
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="<?= base_url('admin'); ?>" class="app-brand-link">
-            <img src="<?= base_url(); ?>/img/sig_bpk.png" width="80%" alt="">
+            <img src="<?= base_url(); ?>/img/logo.png" width="50%" alt="">
             <span class="app-brand-logo demo">
               <!-- <svg
                   width="26px"
@@ -138,10 +138,10 @@
               <!-- <div class="badge bg-primary rounded-pill ms-auto">5</div> -->
             </a>
           </li>
-          <li class="menu-item <?= (uri_string() == 'admin/import') ? 'active' : ''; ?>">
-            <a href="<?= base_url('admin/import'); ?>" class="menu-link">
+          <li class="menu-item <?= (uri_string() == 'admin/data') ? 'active' : ''; ?>">
+            <a href="<?= base_url('admin/data'); ?>" class="menu-link">
               <i class="menu-icon tf-icons fas fa-database"></i>
-              <div data-i18n="Tambah Data">Tambah Data</div>
+              <div data-i18n="Data">Data</div>
               <!-- <div class="badge bg-primary rounded-pill ms-auto">5</div> -->
             </a>
           </li>
@@ -151,7 +151,7 @@
               <div data-i18n="Data Diri">Data Diri</div>
             </a>
           </li> -->
-          <li class="menu-item <?= (uri_string() == 'admin/kawasan') || (uri_string() == 'admin/situs') || (uri_string() == 'admin/objek') || (uri_string() == 'admin/tambah_kawasan') || (uri_string() == 'admin/tambah_situs') || (uri_string() == 'admin/tambah_objek') ? 'active open' : ''; ?>">
+          <!-- <li class="menu-item <?= (uri_string() == 'admin/kawasan') || (uri_string() == 'admin/situs') || (uri_string() == 'admin/objek') || (uri_string() == 'admin/tambah_kawasan') || (uri_string() == 'admin/tambah_situs') || (uri_string() == 'admin/tambah_objek') ? 'active open' : ''; ?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon tf-icons fas fa-database"></i>
               <div data-i18n="Database">Database</div>
@@ -173,7 +173,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
       </aside>
       <!-- / Menu -->
@@ -268,7 +268,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              Balai Pelestarian Kebudayaan Wilayah XVIII
+              Kota Tua Majene
               <a href="https://pixinvent.com" target="_blank" class="footer-link fw-medium"></a>
             </div>
             <!-- <div class="d-none d-lg-inline-block">

@@ -14,12 +14,12 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Webgis BPK XVIII</title>
+    <title>Kota Tua Majene</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/img/logo_kemenbud.png" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/img/logo.png" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -106,7 +106,7 @@
                 <div class="container-xxl">
                     <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
                         <a href="index.html" class="app-brand-link gap-2">
-                            <img src="<?= base_url(); ?>/img/sig_bpk_white.png" width="25%" alt="">
+                            <img src="<?= base_url(); ?>/img/logo.png" width="15%" alt="">
                         </a>
 
                         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
@@ -317,7 +317,7 @@
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
-                                Balai Pelestarian Kebudayaan Wilayah XVIII
+                                Kota Tua Majene
                             </div>
                         </div>
                     </footer>
@@ -333,7 +333,7 @@
     </div>
 
     <script type="text/javascript">
-        var map = L.map('map').setView([-2.060034485212523, 120.04231355232965], 6);
+        var map = L.map('map').setView([-3.544432326881727, 118.96311259992352], 14);
 
         var LayerKita = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 37,
@@ -372,7 +372,7 @@
         <?php } ?>
 
         function createPopupContent(properties) {
-            var popupContent = '<table class="table table-striped table-bordered table-condensed">' +
+            var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
                 '<tr><th>Zona </th><td>' + properties['Zona'] + '</td></tr>' +
                 '<tr><th>Luas </th><td>' + properties['Luas'] + ' Ha</td></tr>' +
                 '</table>';
@@ -399,7 +399,7 @@
 
         //PRINT MAP
         L.easyPrint({
-            title: 'Webgis BPK 18',
+            title: 'Kota Tua Majene',
             position: 'topleft',
             sizeModes: ['A4Portrait', 'A4Landscape']
         }).addTo(map);
