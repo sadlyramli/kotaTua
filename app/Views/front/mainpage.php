@@ -333,7 +333,7 @@
     </div>
 
     <script type="text/javascript">
-        var map = L.map('map').setView([-2.060034485212523, 120.04231355232965], 5);
+        var map = L.map('map').setView([-2.060034485212523, 120.04231355232965], 6);
 
         var LayerKita = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 37,
