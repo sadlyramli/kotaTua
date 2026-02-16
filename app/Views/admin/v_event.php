@@ -1,0 +1,85 @@
+<?= $this->extend('layout/template') ?>
+
+<?= $this->section('content'); ?>
+<!-- Content wrapper -->
+<div class="content-wrapper">
+
+  <!-- Content wrapper -->
+  <div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="py-3 breadcrumb-wrapper mb-4"><span class="text-muted fw-light"></span><?= $title; ?></h4>
+
+      <!-- DataTable with Buttons -->
+      <div class="card">
+        <div class="label mt-2 pr-2">
+          <h5 class="card-header" style="float: left;">Data</h5>
+          <a href="<?= base_url('admin/tambah_event'); ?>"><button type="button" class="btn btn-success" style="width: 20%;float: right;margin-right: 20px;margin-top: 25px;"><i class="bx bx-plus me-md-1"></i><span class="d-md-inline-block d-none"> Tambah Event</span></button></a>
+        </div>
+        <div class="card-datatable table-responsive pt-0">
+          <table class="dt-responsive table table-bordered">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th></th>
+                <th>Nama Event</th>
+                <th>Kategori</th>
+                <th>Tanggal</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php
+                $no = 1;
+                foreach ($event as $key => $g) {
+                ?>
+                <tr>
+                  <td class="text-center"><?= $no++; ?></td>
+                  <td><img src="<?= base_url(); ?>/uploads/event/<?= $g->gambar; ?>" class="img-fluid" width="100px" alt=""></td>
+                  <td><?= $g->judul; ?></td>
+                  <td><?= $g->nama_kategori; ?></td>
+                  <td><?= $g->tanggal; ?></td>
+                  <td style="text-align: center;width: 20%;">
+                      <a href="<?= base_url('admin/edit_event/' . $g->id_event); ?>"><button type="button" class="btn btn-sm btn-warning" ><i class="fas fa-edit"></i></button></a>
+                      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                      data-bs-target="#modal<?= $g->id_event; ?>"><i class="fas fa-trash"></i></button>
+                  </td>
+                </tr>
+              <?php } ?>
+            </tbody>
+          </table>
+        </div>
+        <?php
+        $pesan = session()->getFlashdata('pesan');
+        if (!empty($pesan)) { ?>
+          <div id="pesan" style="display: none;">
+              <?= session()->getFlashdata('pesan'); ?>
+          </div>
+        <?php } ?>
+      </div>
+      <!--/ DataTable with Buttons -->
+
+      <?php foreach ($event as $key => $g){ ?>
+      <div class="modal fade" id="modal<?= $g->id_event; ?>" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered1 modal-simple modal-add-new-cc">
+          <div class="modal-content p-3 p-md-5">
+            <div class="modal-body">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="text-center mb-4">
+                <h3>Anda Yakin ?</h3>
+                <!-- <p>Add new card to complete payment</p> -->
+              </div>
+                <div class="col-12 text-center mt-4">
+                  <a href="<?= base_url('admin/delete_event/' . $g->id_event); ?>"><button type="submit" class="btn btn-danger me-sm-3 me-1"><i class="fas fa-trash"></i> Hapus</button></a>
+                  <button type="reset" class="btn btn-label-secondary btn-reset" data-bs-dismiss="modal" aria-label="Close">
+                    Batal
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php } ?>
+
+      <?= $this->endSection('content'); ?>

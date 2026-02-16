@@ -1,0 +1,314 @@
+#map {
+    position: relative;
+    width: 100%;
+    /* Lebar 100% dari viewport */
+    height: 90vh;
+    /* Tinggi 100% dari viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    image-rendering: auto;
+    transform: translateZ(0);
+}
+
+.accordion {
+    --bs-accordion-btn-bg: #222222;
+    --bs-accordion-active-bg: #222222;
+    --bs-accordion-color: #fff;
+    --bs-accordion-active-color: #ffffff;
+}
+
+.accordion-button {
+    color: #fff;
+}
+
+.info {
+    background: white;
+    padding: 3px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS untuk posisi data penduduk di bawah fitur basemap */
+.leaflet-bottom .leaflet-control {
+    margin-bottom: 10px;
+}
+
+/* Style utama select box */
+.select2-container--default .select2-selection--single {
+    background-color: #1e1e1e !important;
+    border: 1px solid #555 !important;
+    color: #fff !important;
+    height: 38px !important;
+    border-radius: 28px !important;
+    /* 🔸 ubah radius di sini */
+}
+
+.leaflet-control-layers {
+  background-color: rgba(40, 40, 40, 0.6) !important; /* abu-abu gelap transparan */
+  color: #fff !important; /* teks putih */
+  border-radius: 10px !important; /* biar tidak kaku */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4) !important; /* sedikit bayangan lembut */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* garis halus putih transparan */
+}
+
+/* === Styling Kontrol Leaflet === */
+.leaflet-control-zoom,
+.leaflet-control-layers,
+.leaflet-control-scale,
+.leaflet-control-fullscreen,
+.leaflet-control-search,
+.leaflet-control-print {
+  background-color: rgba(30, 30, 30, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  color: #fff !important;
+}
+
+/* Warna ikon atau teks kontrol */
+.leaflet-control-zoom a,
+.leaflet-control a,
+.leaflet-bar a {
+  color: #fff !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Agar tombol Print dan Search menyesuaikan juga */
+.leaflet-control-print button,
+.leaflet-control-search input {
+  background-color: rgba(40, 40, 40, 0.9) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 6px !important;
+}
+
+/* Efek hover */
+.leaflet-control-print button:hover,
+.leaflet-control-search input:focus {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Tombol fullscreen */
+.leaflet-control-fullscreen a {
+  background-color: rgba(40, 40, 40, 0.9) !important;
+  color: #fff !important;
+}
+
+
+
+.leaflet-popup-content-wrapper{
+    background: #dbaeae00;
+}
+
+/* Supaya label radio/checkbox juga ikut putih */
+.leaflet-control-layers label {
+  color: #fff !important;
+}
+
+/* Tambahan agar saat hover terlihat lebih interaktif */
+.leaflet-control-layers label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+
+/* Teks dalam select */
+.select2-container--default .select2-selection__rendered {
+    color: #fff !important;
+    line-height: 38px !important;
+    border-radius: 8px !important;
+}
+
+/* Panah dropdown */
+.select2-container--default .select2-selection__arrow b {
+    border-color: #fff transparent transparent transparent !important;
+}
+
+/* Dropdown hasil pencarian */
+.select2-container--default .select2-dropdown {
+    background-color: #1e1e1e !important;
+    border: 1px solid #444 !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    /* 🔸 dropdown juga ikut melengkung */
+    overflow: hidden !important;
+    /* supaya sudut tidak tajam */
+}
+
+/* Item dropdown */
+.select2-container--default .select2-results__option {
+    background-color: #1e1e1e !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+    margin: 2px;
+    padding: 6px 8px;
+}
+
+/* Hover effect */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-radius: 4px !important;
+}
+
+/* Search box di dalam dropdown */
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    background-color: #2a2a2a !important;
+    border: 1px solid #555 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    margin-bottom: 4px;
+}
+
+/* Placeholder text */
+.select2-container--default .select2-selection__placeholder {
+    color: #aaa !important;
+}
+
+/* Scrollbar */
+.select2-results__options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.select2-results__options::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 4px;
+}
+
+.select2-results__options::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+}
+
+/* === Tema Gelap untuk Navbar & Footer (Versi Override Kuat) === */
+nav#layout-navbar.navbar,
+.layout-navbar,
+.navbar.navbar-expand-xl.bg-navbar-theme,
+footer,
+.layout-footer,
+footer.footer {
+    background-color: #111 !important;
+    /* latar gelap */
+    color: #fff !important;
+    /* teks putih */
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Semua teks, ikon, dan link dalam navbar & footer */
+nav#layout-navbar.navbar *,
+footer *,
+.layout-footer * {
+    color: #fff !important;
+}
+
+/* Link hover */
+nav#layout-navbar.navbar a:hover,
+footer a:hover {
+    color: #a78c58 !important;
+}
+
+/* Tombol dalam navbar & footer */
+nav#layout-navbar.navbar .btn,
+footer .btn,
+.layout-footer .btn {
+    background-color: #a78c58 !important;
+    color: #ffffffff !important;
+    border: none !important;
+    border-radius: 8px;
+}
+
+nav#layout-navbar.navbar .btn:hover,
+footer .btn:hover {
+    background-color: #d3bf9bff !important;
+    color: #fff !important;
+}
+
+/* Dropdown menu agar ikut gelap juga */
+nav#layout-navbar.navbar .dropdown-menu {
+    background-color: #ffffffff !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+nav#layout-navbar.navbar .dropdown-menu a {
+    color: #fff !important;
+}
+
+nav#layout-navbar.navbar .dropdown-menu a:hover {
+    background-color: #1cc88a !important;
+    color: #111 !important;
+}
+
+/* Warna latar belakang tabel dan teks */
+table.dataTable {
+    background-color: #222222;
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    background-color: #222222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    background-color: #222222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+
+/* Gaya tombol */
+.dt-buttons .btn {
+    background-color: #a78c58;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin-right: 6px;
+    transition: background 0.3s ease;
+}
+
+.dt-buttons .btn:hover {
+    background-color: #d3bf9bff;
+}
+
+/* Efek hover baris */
+table.dataTable tbody tr:hover {
+    background-color: #2c2c44;
+    color: #fff;
+}
+
+table.dataTable tbody td {
+    color: #f2f2f2;
+    /* teks lebih terang */
+}
+
+table.dataTable thead th {
+    color: #ffffff !important;
+    /* Putih terang */
+    background-color: #222831 !important;
+    /* Latar belakang gelap netral */
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #3a3f47 !important;
+}
+
+/* Info dan pagination */
+.dataTables_info,
+.dataTables_paginate {
+    color: #fafafaff;
+
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
