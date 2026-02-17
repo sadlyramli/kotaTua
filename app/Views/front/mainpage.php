@@ -374,7 +374,7 @@
         function createPopupContent(properties) {
             var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
                 '<tr><th>Zona </th><td>' + properties['Zona'] + '</td></tr>' +
-                '<tr><th>Luas </th><td>' + properties['Luas'] + ' Ha</td></tr>' +
+                '<tr><th>Luas </th><td>' + properties['Luas'] + '</td></tr>' +
                 '</table>';
 
             return popupContent;

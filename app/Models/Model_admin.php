@@ -197,4 +197,11 @@ class Model_admin extends Model
         return $this->db->table('tb_polygon')
             ->insert($data);
     }
+
+    public function delete_data($data)
+    {
+        $this->db->table('tb_polygon')
+            ->where('id_polygon', $data['id_polygon'])
+            ->delete($data);
+    }
 }

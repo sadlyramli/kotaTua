@@ -670,4 +670,16 @@ class Admin extends BaseController
 
         return view('admin/v_tambah_data', $data);
     }
+
+    public function delete_data($id_polygon)
+    {
+
+        $data = array(
+            'id_polygon' => $id_polygon,
+        );
+        $this->m_admin->delete_data($data);
+
+        session()->setFlashdata('pesan', 'Berhasil Dihapus !!!');
+        return redirect()->to(base_url('admin/data'));
+    }
 }

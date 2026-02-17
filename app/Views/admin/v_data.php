@@ -65,7 +65,7 @@
                 <!-- <p>Add new card to complete payment</p> -->
               </div>
                 <div class="col-12 text-center mt-4">
-                  <a href="<?= base_url('admin/delete_situs/' . $g->id_polygon); ?>"><button type="submit" class="btn btn-danger me-sm-3 me-1"><i class="fas fa-trash"></i> Hapus</button></a>
+                  <a href="<?= base_url('admin/delete_data/' . $g->id_polygon); ?>"><button type="submit" class="btn btn-danger me-sm-3 me-1"><i class="fas fa-trash"></i> Hapus</button></a>
                   <button type="reset" class="btn btn-label-secondary btn-reset" data-bs-dismiss="modal" aria-label="Close">
                     Batal
                   </button>
