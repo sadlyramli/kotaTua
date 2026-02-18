@@ -29,35 +29,35 @@
     rel="stylesheet" />
 
   <!-- Icons -->
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/fonts/boxicons.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/fonts/fontawesome.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/fonts/flag-icons.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/fontawesome.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/flag-icons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/css/rtl/core.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/css/rtl/theme-default.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/css/rtl/core.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/css/rtl/theme-default.css" />
   <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/demo.css" />
 
-  <!-- Vendors CSS -->
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/typeahead-js/typeahead.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/sweetalert2/sweetalert2.css">
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/select2/select2.css" />
+  <!-- vends CSS -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/typeahead-js/typeahead.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-bs5/datatables.bootstrap5.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/sweetalert2/sweetalert2.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/select2/select2.css" />
 
   <!-- Row Group CSS -->
-  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css" />
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css" />
 
   <script src="https://code.highcharts.com//highcharts.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   <!-- Helpers -->
-  <script src="<?= base_url(); ?>/assets/vendor/js/helpers.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/js/helpers.js"></script>
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="<?= base_url(); ?>/assets/js/config.js"></script>
@@ -310,24 +310,24 @@
   <!-- / Layout wrapper -->
 
   <!-- Core JS -->
-  <!-- build:js assets/vendor/js/core.js -->
+  <!-- build:js assets/vend/js/core.js -->
 
-  <script src="<?= base_url(); ?>/assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/popper/popper.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/js/bootstrap.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/hammer/hammer.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/i18n/i18n.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/typeahead-js/typeahead.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/sweetalert2/sweetalert2.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/js/menu.js"></script>
-  <script src="<?= base_url(); ?>/assets/vendor/libs/select2/select2.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/jquery/jquery.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/popper/popper.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/js/bootstrap.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/hammer/hammer.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/i18n/i18n.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/typeahead-js/typeahead.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/sweetalert2/sweetalert2.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/js/menu.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/select2/select2.js"></script>
 
   <!-- endbuild -->
-  <script src="<?= base_url(); ?>/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+  <script src="<?= base_url(); ?>/assets/vend/libs/datatables-bs5/datatables-bootstrap5.js"></script>
 
-  <!-- Vendors JS -->
-  <script src="<?= base_url(); ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+  <!-- vends JS -->
+  <script src="<?= base_url(); ?>/assets/vend/libs/apex-charts/apexcharts.js"></script>
 
   <!-- Main JS -->
   <script src="<?= base_url(); ?>/assets/js/main.js"></script>
