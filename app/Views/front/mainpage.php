@@ -202,7 +202,7 @@
                             <div class="container">
                                 <h2 class="animate__animated animate__fadeInDown">SIJAGA MAJENE </h2>
                                 <p class="animate__animated animate__fadeInUp">Sistem Informasi Bencana Budaya Majene</p>
-                                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Lihat Peta</a>
+                                <a href="#services" class="btn-get-started scrollto animate__animated animate__fadeInUp">Lihat Peta</a>
                             </div>
                         </div>
                     </div>
