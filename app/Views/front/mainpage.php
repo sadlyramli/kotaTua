@@ -1,336 +1,489 @@
 <!DOCTYPE html>
-
-<html
-    lang="en"
-    class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
-    dir="ltr"
-    data-theme="theme-default"
-    data-assets-path="<?= base_url(); ?>/assets/"
-    data-template="vertical-menu-template-no-customizer">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>Kota Tua Majene</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-    <meta name="description" content="" />
+    <!-- Favicons -->
+    <link href="<?= base_url(); ?>/img/logo.png" rel="icon">
+    <link href="<?= base_url(); ?>/front/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/img/logo.png" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link href="<?= base_url(); ?>/front/assets/vendd/animate.css/animate.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/front/assets/vendd/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/front/assets/vendd/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/front/assets/vendd/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/front/assets/vendd/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>/front/assets/vendd/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/boxicons.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/fontawesome.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/fonts/flag-icons.css" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/css/rtl/core.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/css/rtl/theme-default.css" />
-    <!-- <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/demo.css" /> -->
-
-    <!-- vends CSS -->
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/perfect-scrollbar/perfect-scrollbar.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/sweetalert2/sweetalert2.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/select2/select2.css" />
 
+    <!-- Template Main CSS File -->
+    <link href="<?= base_url(); ?>/front/assets/css/style.css" rel="stylesheet">
+
     <!-- LINK LEAFLET -->
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""> -->
+    <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script> -->
+
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/leaflet/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/Leaflet.markercluster-1.4.1/distt/MarkerCluster.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/Leaflet.markercluster-1.4.1/distt\MarkerCluster.Default.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/Leaflet.markercluster-1.4.1/distt/MarkerCluster.Default.css">
     <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/leaflet-search-master/distt/leaflet-search.min.css" />
     <link rel="stylesheet" href="<?= base_url() ?>/assets/leaflet/leaflet.fullscreen-master/Control.FullScreen.css" />
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="<?= base_url() ?>/assets/leaflet/leaflet/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <script src="<?= base_url() ?>/assets/leaflet/leaflet-search-master/distt/leaflet-search.src.js"></script>
     <script src="<?= base_url() ?>/assets/leaflet/Leaflet.markercluster-1.4.1/distt/leaflet.markercluster-src.js"></script>
-    <script src="<?= base_url() ?>/assets/leaflet/Leaflet.markercluster-1.4.1/src/MarkerCluster.js"></script>
     <script src="<?= base_url() ?>/assets/leaflet/leaflet-easyPrint/distt/bundle.js"></script>
     <script src="<?= base_url() ?>/assets/leaflet/leaflet.fullscreen-master/Control.FullScreen.js"></script>
 
     <!-- END OF LINK LEAFLET -->
-
-    <script src="https://code.highcharts.com//highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-
-    <!-- Row Group CSS --><!-- DATATABLES -->
-    <!-- <link href="<?= base_url() ?>/assets/datatables/datatables.min.css" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css" /> -->
-    <!-- END OF DATATABLES -->
-
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.bootstrap5.min.css">
+    <script src="<?= base_url(); ?>/assets/vend/libs/sweetalert2/sweetalert2.js"></script>
+    <script src="<?= base_url(); ?>/assets/vend/libs/select2/select2.js"></script>
 
 
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vend/css/pages/page-profile.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/add.css" />
+    <style>
+        /* Container Background untuk Section About */
+        /* Update CSS untuk Tampilan Clean White */
+        /* Penyesuaian Section About */
+        #about {
+            background-color: #f9fbfd;
+            /* Abu-abu sangat muda untuk kontras */
+            padding: 100px 0;
+        }
 
-    <!-- Helpers -->
-    <script src="<?= base_url(); ?>/assets/vend/js/helpers.js"></script>
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="<?= base_url(); ?>/assets/js/config.js"></script>
+        .title-sigap {
+            color: #222;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
 
+        /* Desain Kartu Fitur */
+        .about-card {
+            background: #ffffff;
+            padding: 45px 35px;
+            border-radius: 15px;
+            border: 1px solid #e1e8ed;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #d1d9e0;
+        }
+
+        .about-card h4 {
+            color: #1a1a1a;
+            font-weight: 700;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .about-card p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .link-external {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .link-external:hover {
+            text-decoration: underline;
+        }
+
+        /* Lingkaran Ikon */
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: #fff;
+        }
+
+        /* Warna Ikon (Sesuai Identitas SIGAP) */
+        .icon-box.blue {
+            background: #3b82f6;
+        }
+
+        .icon-box.green {
+            background: #10b981;
+        }
+
+        .icon-box.red {
+            background: #ef4444;
+        }
+    </style>
 
 </head>
 
 <body>
-    <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-navbar-full layout-horizontal layout-without-menu">
-        <div class="layout-container">
-            <!-- Navbar -->
 
-            <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme" id="layout-navbar">
-                <div class="container-xxl">
-                    <div class="navbar-brand app-brand demo d-none d-xl-flex py-0 me-4">
-                        <a href="index.html" class="app-brand-link gap-2">
-                            <img src="<?= base_url(); ?>/img/logo.png" width="15%" alt="">
-                        </a>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex justify-content-between">
 
-                        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
-                            <i class="bx bx-x bx-sm align-middle"></i>
-                        </a>
-                    </div>
-
-                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                            <i class="bx bx-menu bx-sm"></i>
-                        </a>
-                    </div>
-
-                    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
-                        <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-
-                            <!-- User -->
-                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
-                                <a href="<?= base_url('auth'); ?>">
-                                    <button type="button" class="btn btn-primary">
-                                        <span class="tf-icons fas fa-right-to-bracket me-1"></span>Login
-                                    </button>
-                                </a>
-                            </li>
-                            <!--/ User -->
-                        </ul>
-                    </div>
-
-                    <!-- Search Small Screens -->
-                    <!-- <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
-                        <input
-                            type="text"
-                            class="form-control search-input border-0"
-                            placeholder="Search..."
-                            aria-label="Search..." />
-                        <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
-                    </div> -->
-                </div>
-            </nav>
-
-            <!-- / Navbar -->
-
-            <!-- Layout container -->
-            <div class="layout-page">
-                <!-- Content wrapper -->
-                <div class="content-wrapper" style="background-color:#000000;">
-
-                    <!-- Content -->
-
-                    <div class="container-xxl flex-grow-1 container-p-y">
-                        <!-- <h4 class="py-3 breadcrumb-wrapper mb-4">
-                            <span class="text-muted fw-light">User Profile /</span> Profile
-                        </h4> -->
-
-
-                        <div class="row">
-                            <div class="accordion mt-1 mb-4" id="accordionExample">
-                                <div class="card accordion-item" style="background-color: #222222;">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button
-                                            type="button"
-                                            class="accordion-button collapsed"
-                                            data-bs-toggle="collapse"
-                                            data-bs-target="#accordionThree"
-                                            aria-expanded="false"
-                                            aria-controls="accordionThree" id="filter">
-                                            Filter
-                                        </button>
-                                    </h2>
-                                    <div
-                                        id="accordionThree"
-                                        class="accordion-collapse collapse"
-                                        aria-labelledby="headingThree"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div class="row">
-                                                <!-- Basic -->
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Provinsi</label>
-                                                    <select id="provSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Provinsi --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Kabupaten/Kota</label>
-                                                    <select id="kabSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Kabupaten/Kota --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Kecamatan</label>
-                                                    <select id="kecSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Kecamatan --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Kelurahan/Desa</label>
-                                                    <select id="kelSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Kelurahan/Desa --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <!-- Basic -->
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Kategori</label>
-                                                    <select id="katSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Kategori Temuan --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-3 mb-4">
-                                                    <label for="select2Basic" class="form-label">Situs</label>
-                                                    <select id="situsSelect" class="select2 form-select form-select-sm" data-allow-clear="true">
-                                                        <option hidden="True" value="">-- Pilih Situs --</option>
-                                                        <option value="SEMUA">Semua</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- User Profile Content -->
-                        <div class="row">
-                            
-                            <div class="col-xl-12 col-lg-12 col-md-12 mb-4">
-                                <!-- Activity Timeline -->
-                                <!-- <div class="card card-action mb-4" style="background-color: #222222;"> -->
-                                <!-- <div class="card-body"> -->
-                                <div id="map">
-                                    <!-- </div> -->
-                                    <!-- </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="table-responsive">
-                                <table class="table table-striped" id="datatabel" style="font-size: small; color: #ffffffff;">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>No. Inventaris</th>
-                                            <th>Situs</th>
-                                            <th>Nama Objek</th>
-                                            <th>Kategori</th>
-                                            <th>Nama Temuan</th>
-                                            <th>Jenis Temuan</th>
-                                            <th>Prov</th>
-                                            <th>Kab</th>
-                                            <th>Longitude</th>
-                                            <th>Latitude</th>
-                                            <th>Elevasi</th>
-                                            <th>Status CB/ODCB</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tableDesa">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!-- <div class="row">
-                            <div class="col-xl-4 col-lg-5 col-md-5">
-                            </div>
-                            <div class="col-xl-8 col-lg-7 col-md-7">
-                                <div class="row">
-                                    <div class="col-xl-12 col-lg-12 col-md-12">
-                                        <div class="card mb-4 shadow-sm border-0">
-                                            <div class="card-body" style="text-align: center; background-color: #222222;height: 60px;">
-                                                <h6 class="text-uppercase text-white">Sebaran Cagar Budaya (CB/ODCB) Kabupaten/Kota</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="card mb-4 shadow-sm border-0">
-                                            <div class="card-body" style="text-align: center; background-color: #222222;">
-                                                <div id="chart-sulteng" style="height: 250px; min-width: 100%; background-color: #222222;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6"> 
-                                        <div class="card mb-4 shadow-sm border-0">
-                                            <div class="card-body" style="text-align: center; background-color: #222222;">
-                                                <div id="chart-sulbar" style="height: 250px; min-width: 100%; background-color: #222222;"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!--/ User Profile Content -->
-                    </div>
-                    <!--/ Content -->
-
-                    <!-- Footer -->
-                    <footer class="content-footer footer bg-footer-theme">
-                        <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
-                            <div class="mb-2 mb-md-0">
-                                Copyright ©
-                                <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
-                                Kota Tua Majene
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- / Footer -->
-
-                    <div class="content-backdrop fade"></div>
-                </div>
-                <!--/ Content wrapper -->
+            <div class="logo">
+                <!-- <h1><a href="index.html"><span>e</span>Business</a></h1> -->
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <a href="<?= base_url('home'); ?>"><img src="<?= base_url(); ?>/img/sijaga.png" width="100%" alt="" class="img-fluid"></a>
             </div>
 
-            <!--/ Layout container -->
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Peta</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 2</a></li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
         </div>
-    </div>
+    </header><!-- End Header -->
+
+    <!-- ======= hero Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+                <ol id="hero-carousel-indicators" class="carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active" style="background-image: url(<?= base_url(); ?>/img/bg.jpg)">
+                        <div class="carousel-container">
+                            <div class="container">
+                                <h2 class="animate__animated animate__fadeInDown">SIJAGA MAJENE </h2>
+                                <p class="animate__animated animate__fadeInUp">Sistem Informasi Bencana Budaya Majene</p>
+                                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Lihat Peta</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+
+            </div>
+        </div>
+    </section><!-- End Hero Section -->
+
+    <main id="main">
+
+        <!-- ======= About Section ======= -->
+        <div id="about" class="about-area area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline text-center">
+                            <h2 style="color: #444; margin-bottom: 40px;">Apa Itu Sijaga?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-sm-46 col-xs-12">
+                        <div class="about-card">
+                            <div class="icon-box blue">
+                                <i class="bi bi-map"></i>
+                            </div>
+                            <h4>Pemetaan GIS</h4>
+                            <p>Visualisasi data geografis wilayah rawan bencana dengan sistem informasi geografis yang interaktif.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="about-card">
+                            <div class="icon-box green">
+                                <i class="bi bi-cloud-sun"></i>
+                            </div>
+                            <h4>Informasi Cuaca</h4>
+                            <p>Pemantauan cuaca real-time dan prakiraan cuaca untuk wilayah Kelurahan Pangali-Ali.</p>
+                            <a href="https://www.bmkg.go.id" target="_blank" class="link-bmkg">Lihat selengkapnya di BMKG →</a>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-6 col-sm-46 col-xs-12">
+                        <div class="about-card">
+                            <div class="icon-box red">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+                            <h4>Data Bencana</h4>
+                            <p>Database lengkap kejadian bencana dan sistem pelaporan yang terintegrasi untuk masyarakat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======= Services Section ======= -->
+        <div id="services" class="services-area area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="section-headline services-head text-center">
+                            <h2>Pemetaan</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <!-- Start Left services -->
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div id="map" style="height: 500px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div><!-- End Services Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+        <!-- <div id="portfols -->
+        <!-- End Portfolio Section -->
+
+        <!-- ======= Blog Section ======= -->
+        <!-- <div id="blog" class="blog-area">
+            <div class="blog-inner area-padding">
+                <div class="blog-overly"></div>
+                <div class="container ">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="section-headline text-center">
+                                <h2>Latest News</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-blog">
+                                <div class="single-blog-img">
+                                    <a href="blog.html">
+                                        <img src="<?= base_url(); ?>/front/assets/img/blog/1.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <span class="comments-type">
+                                        <i class="fa fa-comment-o"></i>
+                                        <a href="#">13 comments</a>
+                                    </span>
+                                    <span class="date-type">
+                                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                                    </span>
+                                </div>
+                                <div class="blog-text">
+                                    <h4>
+                                        <a href="blog.html">Assumenda repud eum veniam</a>
+                                    </h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                                    </p>
+                                </div>
+                                <span>
+                                    <a href="blog.html" class="ready-btn">Read more</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-blog">
+                                <div class="single-blog-img">
+                                    <a href="blog.html">
+                                        <img src="<?= base_url(); ?>/front/assets/img/blog/2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <span class="comments-type">
+                                        <i class="fa fa-comment-o"></i>
+                                        <a href="#">130 comments</a>
+                                    </span>
+                                    <span class="date-type">
+                                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                                    </span>
+                                </div>
+                                <div class="blog-text">
+                                    <h4>
+                                        <a href="blog.html">Explicabo magnam quibusdam.</a>
+                                    </h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                                    </p>
+                                </div>
+                                <span>
+                                    <a href="blog.html" class="ready-btn">Read more</a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="single-blog">
+                                <div class="single-blog-img">
+                                    <a href="blog.html">
+                                        <img src="<?= base_url(); ?>/front/assets/img/blog/3.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="blog-meta">
+                                    <span class="comments-type">
+                                        <i class="fa fa-comment-o"></i>
+                                        <a href="#">10 comments</a>
+                                    </span>
+                                    <span class="date-type">
+                                        <i class="fa fa-calendar"></i>2016-03-05 / 09:10:16
+                                    </span>
+                                </div>
+                                <div class="blog-text">
+                                    <h4>
+                                        <a href="blog.html">Lorem ipsum dolor sit amet</a>
+                                    </h4>
+                                    <p>
+                                        Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.sit amet conse adipis elit Assumenda repud eum veniam optio modi sit explicabo nisi magnam quibusdam.
+                                    </p>
+                                </div>
+                                <span>
+                                    <a href="blog.html" class="ready-btn">Read more</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- End Blog Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer>
+        <div class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <div class="footer-logo">
+                                    <!-- <h2><span>e</span>Business</h2> -->
+                                    <a href="<?= base_url('home'); ?>"><img src="<?= base_url(); ?>/img/sijaga.png" width="40%" alt="" class="img-fluid"></a>
+                                </div>
+
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>
+                                <div class="footer-icons">
+                                    <ul>
+                                        <li>
+                                            <a href="#"><i class="bi bi-facebook"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="bi bi-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="bi bi-instagram"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Informasi</h4>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                                </p>
+                                <div class="footer-contacts">
+                                    <p><span>Tel:</span> +123 456 789</p>
+                                    <p><span>Email:</span> contact@example.com</p>
+                                    <p><span>Working Hours:</span> 9am-5pm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end single footer -->
+                    <div class="col-md-4">
+                        <div class="footer-content">
+                            <div class="footer-head">
+                                <h4>Instagram</h4>
+                                <div class="flicker-img">
+                                    <a href="#"><img src="assets/img/portfolio/1.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/2.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/3.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/4.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/5.jpg" alt=""></a>
+                                    <a href="#"><img src="assets/img/portfolio/6.jpg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-area-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="copyright text-center">
+                            <p>
+                                &copy; Copyright <strong>SIJAGA MAJENE</strong>. All Rights Reserved
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End  Footer -->
 
     <script type="text/javascript">
         var map = L.map('map').setView([-3.544432326881727, 118.96311259992352], 14);
@@ -457,55 +610,20 @@
     </script>
 
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-
-    <!--/ Layout wrapper -->
-
-    <!-- Core JS -->
-    <!-- build:js assets/vend/js/core.js -->
-
-    <script src="<?= base_url(); ?>/assets/vend/libs/jquery/jquery.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/popper/popper.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/js/bootstrap.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/hammer/hammer.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/i18n/i18n.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/typeahead-js/typeahead.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/sweetalert2/sweetalert2.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/js/menu.js"></script>
-    <script src="<?= base_url(); ?>/assets/vend/libs/select2/select2.js"></script>
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
-    <!-- endbuild -->
-    <script src="<?= base_url(); ?>/assets/vend/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="<?= base_url(); ?>/front/assets/vendd/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url(); ?>/front/assets/vendd/glightbox/js/glightbox.min.js"></script>
+    <script src="<?= base_url(); ?>/front/assets/vendd/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="<?= base_url(); ?>/front/assets/vendd/swiper/swiper-bundle.min.js"></script>
+    <script src="<?= base_url(); ?>/front/assets/vendd/php-email-form/validate.js"></script>
 
-    <!-- vends JS -->
-    <script src="<?= base_url(); ?>/assets/vend/libs/apex-charts/apexcharts.js"></script>
+    <!-- Template Main JS File -->
+    <script src="<?= base_url(); ?>/front/assets/js/main.js"></script>
 
-    <!-- Main JS -->
-    <script src="<?= base_url(); ?>/assets/js/main.js"></script>
-
-    <!-- <script src="/assets/js/tables-datatables-basic.js"></script> -->
-    <!-- <script src="/assets/js/tables-datatables-advanced.js"></script> -->
-    <!-- DATATABLES -->
-    <!-- <script src="<?= base_url() ?>/assets/datatables/datatables.min.js"></script> -->
-    <!-- END OF DATATABLES -->
-
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.bootstrap5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
-
-
-    <!-- Page JS -->
-    <script src="<?= base_url(); ?>/assets/js/forms-selects.js"></script>
-    <script src="<?= base_url(); ?>/assets/js/dashboards-analytics.js"></script>
 </body>
 
 </html>
