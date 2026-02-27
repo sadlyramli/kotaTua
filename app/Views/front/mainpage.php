@@ -510,6 +510,7 @@
         var geojsonBanjir = L.layerGroup(); // Kumpulan layer untuk polygon
         var geojsonLongsor = L.layerGroup(); // Kumpulan layer untuk polygon
         var geojsonGempa = L.layerGroup(); // Kumpulan layer untuk polygon
+        var geojsonCuaca = L.layerGroup(); // Kumpulan layer untuk polygon
 
         <?php foreach ($polygon as $row) { ?>
             $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
@@ -713,7 +714,7 @@
                     },
                 });
 
-                geojsonLongsor.addLayer(polygonLayer);
+                geojsonCuaca.addLayer(polygonLayer);
             });
         <?php } ?>
 
@@ -765,6 +766,7 @@
             "Data Banjir": geojsonBanjir,
             "Data Longsor": geojsonLongsor,
             "Data Gempa": geojsonGempa,
+            "Data Cuaca Ekstrim": geojsonGempa,
         };
 
 
