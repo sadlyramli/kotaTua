@@ -766,7 +766,7 @@
             "Data Banjir": geojsonBanjir,
             "Data Longsor": geojsonLongsor,
             "Data Gempa": geojsonGempa,
-            "Data Cuaca Ekstrim": geojsonGempa,
+            "Data Cuaca Ekstrim": geojsonCuaca,
         };
 
 
