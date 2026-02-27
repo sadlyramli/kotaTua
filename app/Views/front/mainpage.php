@@ -141,6 +141,11 @@
         .icon-box.red {
             background: #ef4444;
         }
+
+        /* Memaksa teks di dalam kontrol Leaflet menjadi rata kiri */
+        .leaflet-control-layers-list {
+            text-align: left !important;
+        }
     </style>
 
 </head>
@@ -502,6 +507,9 @@
 
 
         var geojsonPolygon = L.layerGroup(); // Kumpulan layer untuk polygon
+        var geojsonBanjir = L.layerGroup(); // Kumpulan layer untuk polygon
+        var geojsonLongsor = L.layerGroup(); // Kumpulan layer untuk polygon
+        var geojsonGempa = L.layerGroup(); // Kumpulan layer untuk polygon
 
         <?php foreach ($polygon as $row) { ?>
             $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
@@ -546,6 +554,143 @@
             return color;
         };
 
+        // BANJIR
+        <?php foreach ($banjir as $row) { ?>
+            $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
+                var polygonLayer = L.geoJSON(data, {
+                    style: function(feature) {
+                        // Mengambil nilai GRIDCODE dari properti GeoJSON
+                        var gridCode = feature.properties.GRIDCODE;
+
+                        return {
+                            // Memanggil fungsi penentu warna berdasarkan GRIDCODE
+                            fillColor: getBanjirColor(gridCode),
+                            opacity: 0.1,
+                            fillOpacity: 0.6,
+                            color: 'white', // Warna garis tepi poligon
+                            weight: 1
+                        }
+                    },
+                    onEachFeature: function(feature, layer) {
+                        layer.bindPopup(banjirPopupContent(feature.properties));
+                    },
+                });
+
+                geojsonBanjir.addLayer(polygonLayer);
+            });
+        <?php } ?>
+
+        // Fungsi baru untuk menentukan warna berdasarkan GRIDCODE
+        function getBanjirColor(code) {
+            // Sesuaikan warna dengan tampilan yang Anda inginkan (misal: Hijau dan Ungu)
+            return code == 0 ? '#8bdfe6' : // Ungu untuk GRIDCODE 1
+                code == 1 ? '#2ccddb' : // Hijau untuk GRIDCODE 0
+                code == 2 ? '#977e0c' : // Hijau untuk GRIDCODE 0
+                code == 3 ? '#a13733' : // Hijau untuk GRIDCODE 0
+                '#bdc3c7'; // Abu-abu jika ada nilai lain
+        }
+
+        function banjirPopupContent(properties) {
+            // Menambahkan informasi GRIDCODE dan Keterangan di Popup
+            var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
+                '<tr><th>Keterangan </th><td>' + (properties['keterangan'] || '-') + '</td></tr>' +
+                '<tr><th>Grid Code </th><td>' + properties['GRIDCODE'] + '</td></tr>' +
+                '</table>';
+
+            return popupContent;
+        };
+
+        //GEMPA
+        <?php foreach ($gempa as $row) { ?>
+            $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
+                var polygonLayer = L.geoJSON(data, {
+                    style: function(feature) {
+                        // Mengambil nilai GRIDCODE dari properti GeoJSON
+                        var gridCode = feature.properties.GRIDCODE;
+
+                        return {
+                            // Memanggil fungsi penentu warna berdasarkan GRIDCODE
+                            fillColor: getGempaColor(gridCode),
+                            opacity: 0.1,
+                            fillOpacity: 0.6,
+                            color: 'white', // Warna garis tepi poligon
+                            weight: 1
+                        }
+                    },
+                    onEachFeature: function(feature, layer) {
+                        layer.bindPopup(gempaPopupContent(feature.properties));
+                    },
+                });
+
+                geojsonGempa.addLayer(polygonLayer);
+            });
+        <?php } ?>
+
+        // Fungsi baru untuk menentukan warna berdasarkan GRIDCODE
+        function getGempaColor(code) {
+            // Sesuaikan warna dengan tampilan yang Anda inginkan (misal: Hijau dan Ungu)
+            return code == 0 ? '#58b660' : // Ungu untuk GRIDCODE 1
+                code == 1 ? '#279630' : // Hijau untuk GRIDCODE 0
+                code == 2 ? '#a1c229' : // Hijau untuk GRIDCODE 0
+                code == 3 ? '#a13733' : // Hijau untuk GRIDCODE 0
+                '#bdc3c7'; // Abu-abu jika ada nilai lain
+        }
+
+        function gempaPopupContent(properties) {
+            // Menambahkan informasi GRIDCODE dan Keterangan di Popup
+            var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
+                '<tr><th>Keterangan </th><td>' + (properties['keterangan'] || '-') + '</td></tr>' +
+                '<tr><th>Grid Code </th><td>' + properties['GRIDCODE'] + '</td></tr>' +
+                '</table>';
+
+            return popupContent;
+        };
+
+
+        // LONGSOR
+        <?php foreach ($longsor as $row) { ?>
+            $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
+                var polygonLayer = L.geoJSON(data, {
+                    style: function(feature) {
+                        // Mengambil nilai GRIDCODE dari properti GeoJSON
+                        var gridCode = feature.properties.GRIDCODE;
+
+                        return {
+                            // Memanggil fungsi penentu warna berdasarkan GRIDCODE
+                            fillColor: getLongsorColor(gridCode),
+                            opacity: 0.1,
+                            fillOpacity: 0.6,
+                            color: 'white', // Warna garis tepi poligon
+                            weight: 1
+                        }
+                    },
+                    onEachFeature: function(feature, layer) {
+                        layer.bindPopup(longsorPopupContent(feature.properties));
+                    },
+                });
+
+                geojsonLongsor.addLayer(polygonLayer);
+            });
+        <?php } ?>
+
+        // Fungsi baru untuk menentukan warna berdasarkan GRIDCODE
+        function getLongsorColor(code) {
+            // Sesuaikan warna dengan tampilan yang Anda inginkan (misal: Hijau dan Ungu)
+            return code == 0 ? '#6adb70' : // Ungu untuk GRIDCODE 1
+                code == 0 ? '#3b7a3e' : // Hijau untuk GRIDCODE 0
+                '#bdc3c7'; // Abu-abu jika ada nilai lain
+        }
+
+        function longsorPopupContent(properties) {
+            // Menambahkan informasi GRIDCODE dan Keterangan di Popup
+            var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
+                '<tr><th>Keterangan </th><td>' + (properties['keterangan'] || '-') + '</td></tr>' +
+                '<tr><th>Grid Code </th><td>' + properties['GRIDCODE'] + '</td></tr>' +
+                '</table>';
+
+            return popupContent;
+        };
+
 
         var searchLayer = new L.LayerGroup(); // layer group for searchLayer
         searchLayer.addLayer(geojsonPolygon);
@@ -571,6 +716,9 @@
         };
         var overlayMaps = {
             "Data": geojsonPolygon,
+            "Data Banjir": geojsonBanjir,
+            "Data Longsor": geojsonLongsor,
+            "Data Gempa": geojsonGempa,
         };
 
 

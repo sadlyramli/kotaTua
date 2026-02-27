@@ -20,6 +20,9 @@ class Home extends BaseController
         $data = array(
             'title' => 'Objek',
             'polygon' => $this->m_admin->get_polygon()->getResult(),
+            'longsor' => $this->m_admin->get_longsor()->getResult(),
+            'banjir' => $this->m_admin->get_banjir()->getResult(),
+            'gempa' => $this->m_admin->get_gempa()->getResult(),
         );
 
        

@@ -191,6 +191,21 @@ class Model_admin extends Model
         return $this->db->table('tb_polygon')
             ->get();
     }
+    public function get_banjir()
+    {
+        return $this->db->table('tb_banjir')
+            ->get();
+    }
+    public function get_longsor()
+    {
+        return $this->db->table('tb_longsor')
+            ->get();
+    }
+    public function get_gempa()
+    {
+        return $this->db->table('tb_gempa')
+            ->get();
+    }
 
     public function insert_polygon($data)
     {
