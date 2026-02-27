@@ -207,6 +207,12 @@ class Model_admin extends Model
             ->get();
     }
 
+    public function get_cuaca()
+    {
+        return $this->db->table('tb_cuaca_ekstrim')
+            ->get();
+    }
+
     public function insert_polygon($data)
     {
         return $this->db->table('tb_polygon')

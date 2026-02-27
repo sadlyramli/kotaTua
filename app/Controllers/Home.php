@@ -23,6 +23,7 @@ class Home extends BaseController
             'longsor' => $this->m_admin->get_longsor()->getResult(),
             'banjir' => $this->m_admin->get_banjir()->getResult(),
             'gempa' => $this->m_admin->get_gempa()->getResult(),
+            'cuaca' => $this->m_admin->get_cuaca()->getResult(),
         );
 
        

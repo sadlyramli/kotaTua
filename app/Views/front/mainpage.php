@@ -691,6 +691,52 @@
             return popupContent;
         };
 
+        // CUACA EKSTRIM
+        <?php foreach ($cuaca as $row) { ?>
+            $.getJSON("<?= base_url('import_polygon/' . $row->file) ?>", function(data) {
+                var polygonLayer = L.geoJSON(data, {
+                    style: function(feature) {
+                        // Mengambil nilai GRIDCODE dari properti GeoJSON
+                        var gridCode = feature.properties.GRIDCODE;
+
+                        return {
+                            // Memanggil fungsi penentu warna berdasarkan GRIDCODE
+                            fillColor: getCuacaColor(gridCode),
+                            opacity: 0.1,
+                            fillOpacity: 0.6,
+                            color: 'white', // Warna garis tepi poligon
+                            weight: 1
+                        }
+                    },
+                    onEachFeature: function(feature, layer) {
+                        layer.bindPopup(cuacaPopupContent(feature.properties));
+                    },
+                });
+
+                geojsonLongsor.addLayer(polygonLayer);
+            });
+        <?php } ?>
+
+        // Fungsi baru untuk menentukan warna berdasarkan GRIDCODE
+        function getCuacaColor(code) {
+            // Sesuaikan warna dengan tampilan yang Anda inginkan (misal: Hijau dan Ungu)
+            return code == 0 ? '#58b660' : // Ungu untuk GRIDCODE 1
+                code == 1 ? '#279630' : // Hijau untuk GRIDCODE 0
+                code == 2 ? '#a1c229' : // Hijau untuk GRIDCODE 0
+                code == 3 ? '#a13733' : // Hijau untuk GRIDCODE 0
+                '#bdc3c7'; // Abu-abu jika ada nilai lain
+        }
+
+        function cuacaPopupContent(properties) {
+            // Menambahkan informasi GRIDCODE dan Keterangan di Popup
+            var popupContent = '<table class="table table-striped table-bordered" style="font-size:12px;background-color:white">' +
+                '<tr><th>Keterangan </th><td>' + (properties['keterangan'] || '-') + '</td></tr>' +
+                '<tr><th>Grid Code </th><td>' + properties['GRIDCODE'] + '</td></tr>' +
+                '</table>';
+
+            return popupContent;
+        };
+
 
         var searchLayer = new L.LayerGroup(); // layer group for searchLayer
         searchLayer.addLayer(geojsonPolygon);
